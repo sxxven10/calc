@@ -1,0 +1,63 @@
+using System;
+using System.IO;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
+
+namespace appC5
+{
+    internal class Program
+    {
+        public static void Main(string[] args)
+        {
+            double firstNumber;
+            double secondNumber;
+            int operationn;
+
+            try
+            {
+                Console.Write("First number: ");
+                firstNumber = Convert.ToDouble(Console.ReadLine());
+
+                Console.Write("second number: ");
+                secondNumber = Convert.ToDouble(Console.ReadLine());
+
+                Console.Write("\nOperation: 1 = +, 2 = -, 3 = /, 4 = * : ");
+                operationn = Convert.ToInt32(Console.ReadLine());
+
+                switch (operationn)
+                {
+                    case 1:
+                        Console.WriteLine($"{firstNumber} + {secondNumber} = {firstNumber + secondNumber}");
+                        break;
+                    case 2:
+                        Console.WriteLine($"{firstNumber} - {secondNumber} = {firstNumber - secondNumber}");
+                        break;
+                    case 3:
+                        Console.WriteLine($"{firstNumber} / {secondNumber} = {firstNumber / secondNumber}");
+                        break;
+                    case 4:
+                        Console.WriteLine($"{firstNumber} * {secondNumber} = {firstNumber * secondNumber}");
+                        break;
+                    default:
+                        Console.WriteLine("ne podhodit bratan");
+                        break;
+                }
+                
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("popavsya ORK ahahh");
+            }
+
+
+
+
+
+
+        }
+    }
+    
+    
+    
+}
